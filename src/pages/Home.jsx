@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import MovieCard from "../components/MovieCard"
 
 function Home() {
@@ -10,7 +11,7 @@ function Home() {
     {id: 3, title: "The Matrix", release_date: "1998"},
   ]
   
-  const handleSearch = () => {
+  const handleSearch = (e) => {
     e.preventDefault()
     alert(searchQuery)
     setSearchQuery("")
@@ -27,7 +28,7 @@ function Home() {
       <button type="search" className="search-btn">Search</button>
     </form>
 
-    <div clasName="movies-grid">
+    <div className="movies-grid">
       {movies.map((movie) => 
       (
        <MovieCard movie={movie} key={movie.id}/>
